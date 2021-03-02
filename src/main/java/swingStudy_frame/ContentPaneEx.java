@@ -1,4 +1,4 @@
-package swingStudy.frame;
+package swingStudy_frame;
 
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
