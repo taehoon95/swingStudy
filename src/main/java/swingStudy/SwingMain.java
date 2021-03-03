@@ -17,10 +17,12 @@ import java.awt.event.ActionEvent;
 import javax.swing.border.TitledBorder;
 
 import swingStudy_component.FrameComponentEx;
+import swingStudy_component.JButtonEx;
 import swingStudy_component.JLabelEx;
 import swingStudy_frame.ContentPaneEx;
 import javax.swing.UIManager;
 import java.awt.Color;
+import javax.swing.JCheckBox;
 
 public class SwingMain extends JFrame implements ActionListener {
 
@@ -36,7 +38,8 @@ public class SwingMain extends JFrame implements ActionListener {
 	private JPanel pComponent;
 	private JButton btn04;
 	private JButton btn05;
-	private JButton btn06;
+	private JPanel pCheckRadio;
+	private JCheckBox chckbxNewCheckBox;
 
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
@@ -109,14 +112,22 @@ public class SwingMain extends JFrame implements ActionListener {
 		btn04.addActionListener(this);
 		pComponent.add(btn04);
 		
-		btn05 = new JButton("JButton");
+		btn05 = new JButton("JButton && JToggle");
+		btn05.addActionListener(this);
 		pComponent.add(btn05);
 		
-		btn06 = new JButton("JToggle Button");
-		pComponent.add(btn06);
+		pCheckRadio = new JPanel();
+		pCheckRadio.setBorder(new TitledBorder(null, "JCheckBox && JRadio", TitledBorder.LEADING, TitledBorder.TOP, null, null));
+		contentPane.add(pCheckRadio);
+		
+		chckbxNewCheckBox = new JCheckBox("New check box");
+		pCheckRadio.add(chckbxNewCheckBox);
 	}
 
 	public void actionPerformed(ActionEvent e) {
+		if (e.getSource() == btn05) {
+			btn05ActionPerformed(e);
+		}
 		if (e.getSource() == btn04) {
 			btn04ActionPerformed(e);
 		}
@@ -172,6 +183,10 @@ public class SwingMain extends JFrame implements ActionListener {
 	}
 	protected void btn04ActionPerformed(ActionEvent e) {
 		JLabelEx frame = new JLabelEx();
+		frame.setVisible(true);
+	}
+	protected void btn05ActionPerformed(ActionEvent e) {
+		JButtonEx frame = new JButtonEx();
 		frame.setVisible(true);
 	}
 }
