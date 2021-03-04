@@ -23,6 +23,7 @@ import swingStudy_component.JButtonEx;
 import swingStudy_component.JCheckBoxCustomEx;
 import swingStudy_component.JCheckBoxEx;
 import swingStudy_component.JLabelEx;
+import swingStudy_component.JRadioButtonEx;
 import swingStudy_frame.ContentPaneEx;
 import javax.swing.UIManager;
 import java.awt.Color;
@@ -136,6 +137,9 @@ public class SwingMain extends JFrame implements ActionListener {
 	}
 
 	public void actionPerformed(ActionEvent e) {
+		if (e.getSource() == btn07) {
+			btn07ActionPerformed(e);
+		}
 		if (e.getSource() == btn06) {
 			btn06ActionPerformed(e);
 		}
@@ -217,4 +221,8 @@ public class SwingMain extends JFrame implements ActionListener {
 		frame2.setVisible(true);
 	}
 	
+	protected void btn07ActionPerformed(ActionEvent e) {
+		JRadioButtonEx frame = new JRadioButtonEx();
+		frame.setVisible(true);
+	}
 }
