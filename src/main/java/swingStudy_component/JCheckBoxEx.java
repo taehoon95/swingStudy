@@ -11,8 +11,6 @@ import javax.swing.BoxLayout;
 import javax.swing.SwingConstants;
 
 import java.awt.Component;
-import java.awt.FlowLayout;
-import java.awt.HeadlessException;
 import java.awt.event.ItemListener;
 import java.util.ArrayList;
 import java.awt.event.ItemEvent;
@@ -70,7 +68,7 @@ public class JCheckBoxEx extends JFrame implements ItemListener {
 //		checkCherry = new JCheckBox("체리");
 //		checkCherry.addItemListener(this);
 //		panel.add(checkCherry);
-//		
+		
 		lbl = new JLabel();
 		lbl.setVerticalAlignment(SwingConstants.BOTTOM);
 		pNorth.add(lbl);
@@ -80,8 +78,8 @@ public class JCheckBoxEx extends JFrame implements ItemListener {
 		
 		String title = "";
 		for(Fruit f : list) {
-			title += f.toString() + "";
-			JCheckBox ck = new JCheckBox(f.getName());
+			title += f.toString() + ""; // title 받아오기 위한 한줄
+			JCheckBox ck = new JCheckBox(f.getName()); // JcheckBox생성 
 			pNorth.add(ck);
 			ck.addItemListener(this);
 		}

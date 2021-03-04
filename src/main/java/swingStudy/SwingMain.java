@@ -131,6 +131,7 @@ public class SwingMain extends JFrame implements ActionListener {
 		pCheckRadio.add(btn06);
 		
 		btn07 = new JButton("JRadioButton");
+		btn07.addActionListener(this);
 		pCheckRadio.add(btn07);
 	}
 
@@ -215,4 +216,5 @@ public class SwingMain extends JFrame implements ActionListener {
 		JCheckBoxCustomEx frame2 = new JCheckBoxCustomEx(list);
 		frame2.setVisible(true);
 	}
+	
 }

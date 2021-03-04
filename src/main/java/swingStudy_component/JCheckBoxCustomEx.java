@@ -1,7 +1,6 @@
 package swingStudy_component;
 
 import java.awt.BorderLayout;
-import java.awt.EventQueue;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
 import java.util.ArrayList;
@@ -11,7 +10,6 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
-import javax.swing.JOptionPane;
 
 public class JCheckBoxCustomEx extends JFrame implements ItemListener{
 
@@ -19,6 +17,8 @@ public class JCheckBoxCustomEx extends JFrame implements ItemListener{
 	private ArrayList<Fruit> list;
 	private int sum;
 	private JLabel lblRes;
+	
+	
 	public JCheckBoxCustomEx(ArrayList<Fruit> list) {
 		this.list = list;
 		initialize();

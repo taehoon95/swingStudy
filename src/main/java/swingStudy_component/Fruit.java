@@ -4,8 +4,6 @@ public class Fruit {
 	private String name;
 	private int price;
 
-	
-
 	public Fruit(String name) {
 		this.name = name;
 	}
@@ -56,10 +54,8 @@ public class Fruit {
 
 	@Override
 	public String toString() {
-		return String.format("Fruit [name=%s, price=%s]", name, price);
+		return String.format("%s %s ", name, price);
 	}
-
-
 
 	public Fruit(String name, int price) {
 		this.name = name;
