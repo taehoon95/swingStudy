@@ -15,7 +15,6 @@ public class CustomRadioButton extends JPanel {
 	private JRadioButton rdbtnCherry;
 	private ArrayList<JRadioButton> rdBtns;
 	
-	
 	public CustomRadioButton() {
 		rdBtns = new ArrayList<JRadioButton>();
 		initialize();

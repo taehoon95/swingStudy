@@ -20,11 +20,11 @@ import javax.swing.SwingConstants;
 public class JRadioButtonEx extends JFrame implements ItemListener{
 
 	private JPanel contentPane;
-	private String imgPath = System.getProperty("user.dir") + File.separator + "images";
+	private String imgPath = System.getProperty("user.dir") + File.separator + "images" + File.separator ;
 	private ImageIcon[] icons = {
-			new ImageIcon(imgPath + "\\apple.jpg"),
-			new ImageIcon(imgPath + "\\pear.jpg"),
-			new ImageIcon(imgPath + "\\cherry.jpg"),
+			new ImageIcon(imgPath + "apple.jpg"),
+			new ImageIcon(imgPath + "pear.jpg"),
+			new ImageIcon(imgPath + "cherry.jpg"),
 	};
 	private JLabel lblImg;
 	
@@ -82,7 +82,6 @@ public class JRadioButtonEx extends JFrame implements ItemListener{
 				break;
 			default:
 				lblImg.setIcon(icons[2]);
-				break;
 			}
 		}
 	}
