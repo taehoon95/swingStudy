@@ -12,8 +12,25 @@ public class DeptPanel extends JPanel {
 	private JTextField tfDeptName;
 	private JTextField tfFloor;
 
+	public JTextField getTfDeptNo() {
+		return tfDeptNo;
+	}
+	public void setTfDeptNo(JTextField tfDeptNo) {
+		this.tfDeptNo = tfDeptNo;
+	}
+	public JTextField getTfDeptName() {
+		return tfDeptName;
+	}
+	public void setTfDeptName(JTextField tfDeptName) {
+		this.tfDeptName = tfDeptName;
+	}
+	public JTextField getTfFloor() {
+		return tfFloor;
+	}
+	public void setTfFloor(JTextField tfFloor) {
+		this.tfFloor = tfFloor;
+	}
 	public DeptPanel() {
-
 		initialize();
 	}
 	public Department getDepartment() {
@@ -36,6 +53,8 @@ public class DeptPanel extends JPanel {
 		tfDeptName.setText("");
 		tfFloor.setText("");
 	}
+	
+
 	
 	private void initialize() {
 		setBorder(new TitledBorder(null, "부서 정보", TitledBorder.LEADING, TitledBorder.TOP, null, null));
