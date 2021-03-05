@@ -23,6 +23,8 @@ import swingStudy_component.JButtonEx;
 import swingStudy_component.JCheckBoxCustomEx;
 import swingStudy_component.JCheckBoxEx;
 import swingStudy_component.JLabelEx;
+import swingStudy_component.JListEx;
+import swingStudy_component.JListEx2;
 import swingStudy_component.JRadioButtonEx;
 import swingStudy_component.JTextFieldAreaEx;
 import swingStudy_frame.ContentPaneEx;
@@ -49,6 +51,10 @@ public class SwingMain extends JFrame implements ActionListener {
 	private JButton btn07;
 	private JPanel pText;
 	private JButton btnTextField;
+	private JPanel panel;
+	private JButton btn09;
+	private JButton btn10;
+	private JButton btn11;
 
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
@@ -76,7 +82,7 @@ public class SwingMain extends JFrame implements ActionListener {
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
-		contentPane.setLayout(new GridLayout(0, 3, 10, 10));
+		contentPane.setLayout(new GridLayout(0, 5, 10, 10));
 		
 		btn01 = new JButton("Jframe 예");
 		btn01.addActionListener(this);
@@ -145,9 +151,31 @@ public class SwingMain extends JFrame implements ActionListener {
 		btnTextField = new JButton("J\uD14D\uC2A4\uD2B8 \uD544\uB4DC \uC608\uC81C");
 		btnTextField.addActionListener(this);
 		pText.add(btnTextField);
+		
+		panel = new JPanel();
+		panel.setBorder(new TitledBorder(null, "JList", TitledBorder.LEADING, TitledBorder.TOP, null, null));
+		contentPane.add(panel);
+		panel.setLayout(new GridLayout(0, 1, 0, 0));
+		
+		btn09 = new JButton("JList\uC6081");
+		btn09.addActionListener(this);
+		panel.add(btn09);
+		
+		btn10 = new JButton("JList\uC6082");
+		btn10.addActionListener(this);
+		panel.add(btn10);
+		
+		btn11 = new JButton("JList\uC6083");
+		panel.add(btn11);
 	}
 
 	public void actionPerformed(ActionEvent e) {
+		if (e.getSource() == btn10) {
+			btn10ActionPerformed(e);
+		}
+		if (e.getSource() == btn09) {
+			btn09ActionPerformed(e);
+		}
 		if (e.getSource() == btnTextField) {
 			btnTextFieldActionPerformed(e);
 		}
@@ -241,6 +269,14 @@ public class SwingMain extends JFrame implements ActionListener {
 	}
 	protected void btnTextFieldActionPerformed(ActionEvent e) {
 		JTextFieldAreaEx frame = new JTextFieldAreaEx();
+		frame.setVisible(true);
+	}
+	protected void btn09ActionPerformed(ActionEvent e) {
+		JListEx frame = new JListEx();
+		frame.setVisible(true);
+	}
+	protected void btn10ActionPerformed(ActionEvent e) {
+		JListEx2 frame = new JListEx2();
 		frame.setVisible(true);
 	}
 }
