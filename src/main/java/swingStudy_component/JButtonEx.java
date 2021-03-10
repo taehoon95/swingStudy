@@ -1,25 +1,21 @@
 package swingStudy_component;
 
-import java.awt.BorderLayout;
-import java.awt.EventQueue;
-
-import javax.swing.JFrame;
-import javax.swing.JPanel;
-import javax.swing.border.EmptyBorder;
-import javax.swing.BoxLayout;
+import java.awt.Color;
 import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.io.File;
 
-import javax.swing.JButton;
-import java.awt.FlowLayout;
+import javax.swing.BoxLayout;
 import javax.swing.ImageIcon;
-import javax.swing.SwingConstants;
-import javax.swing.border.TitledBorder;
-import javax.swing.UIManager;
-import java.awt.Color;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
 import javax.swing.JToggleButton;
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
+import javax.swing.SwingConstants;
+import javax.swing.UIManager;
+import javax.swing.border.EmptyBorder;
+import javax.swing.border.TitledBorder;
 
 @SuppressWarnings("serial")
 public class JButtonEx extends JFrame implements ActionListener {
@@ -50,7 +46,7 @@ public class JButtonEx extends JFrame implements ActionListener {
 		btnNewButton.setPressedIcon(new ImageIcon(imgPath + "\\KakaoTalk_20210303_140820088.gif"));
 		pLeft.add(btnNewButton);
 		
-		tglBtn = new JToggleButton("\uD1A0\uAE00\uBC84\uD2BC");
+		tglBtn = new JToggleButton("토글버튼");
 		tglBtn.addActionListener(this);
 		pLeft.add(tglBtn);
 		

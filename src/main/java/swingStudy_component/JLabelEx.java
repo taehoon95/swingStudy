@@ -25,7 +25,6 @@ public class JLabelEx extends JFrame implements MouseListener {
 	private JLabel lblTop;
 	private JLabel lblSouth;
 	public JLabelEx() {
-		System.out.println(path + "\\\\jisoo.jpg");
 		initialize();
 	}
 	private void initialize() {
@@ -50,7 +49,7 @@ public class JLabelEx extends JFrame implements MouseListener {
 		contentPane.add(lblCenter, BorderLayout.CENTER);
 		
 		lblSouth = new JLabel("\uC804\uD654\uC8FC\uC138\uC694");
-		lblSouth.setIcon(new ImageIcon(path+"\\zion.jpg"));
+		lblSouth.setIcon(new ImageIcon(path+"\\arin.jpg"));
 		lblSouth.setHorizontalAlignment(SwingConstants.CENTER);
 		contentPane.add(lblSouth, BorderLayout.SOUTH);
 	}
@@ -70,7 +69,7 @@ public class JLabelEx extends JFrame implements MouseListener {
 	}
 	
 	protected void lblTopMouseClicked(MouseEvent e) {
-		lblCenter.setIcon(new ImageIcon(path+"\\zion.jpg"));
+		lblCenter.setIcon(new ImageIcon(path+"\\jisoo2.jpg"));
 		lblSouth.setText("010-1234-1234");
 		JOptionPane.showMessageDialog(null, "변경완료");
 	}
