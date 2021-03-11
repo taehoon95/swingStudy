@@ -123,7 +123,7 @@ public class MyTablePanel extends JPanel {
 				int row, int column) {
 			setText(value == null ? "" : value.toString());
 			setOpaque(true);
-			int total = (int) table.getValueAt(row, 5);
+			int total = (int) table.getValueAt(row, 5); // 5 는 총점의 index 위치
 			if (total < 200) {
 				setBackground(Color.orange);
 			} else {

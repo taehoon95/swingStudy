@@ -7,10 +7,12 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.ListSelectionModel;
-import javax.swing.SwingConstants;
+import javax.swing.RowSorter;
 import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableColumnModel;
+import javax.swing.table.TableModel;
+import javax.swing.table.TableRowSorter;
 
 public abstract class AbstractCustomTablePanel<T> extends JPanel {
 	private JTable table;
@@ -50,8 +52,12 @@ public abstract class AbstractCustomTablePanel<T> extends JPanel {
 		CustomTableModel model = new CustomTableModel(data, getColumnNames());
 		table.setModel(model);
 		
+		RowSorter<TableModel> sorter = new TableRowSorter<TableModel>(model);
+		table.setRowSorter(sorter);
+		
 		setAlignAndWidth();
 	
+		
 	}
 	/*
 	 *컬럼내용 정렬 
@@ -61,7 +67,7 @@ public abstract class AbstractCustomTablePanel<T> extends JPanel {
 	 *setTableCellWidth(100, 250, 100);
 	 */
 
-	protected abstract void setAlignAndWidth();
+	protected abstract void setAlignAndWidth(); // 구현해줘야할 메서드
 
 	protected void setTableCellWidth(int... width) {
 		TableColumnModel tcm = table.getColumnModel();
@@ -82,11 +88,11 @@ public abstract class AbstractCustomTablePanel<T> extends JPanel {
 		}
 	}
 	
-	public abstract Object[] toArray(T t);
+	public abstract Object[] toArray(T t); // 데이터 입력
 
-	public abstract String[] getColumnNames();
+	public abstract String[] getColumnNames(); // 컬럼명
 
-	private class CustomTableModel extends DefaultTableModel { // 테이블 안에 수정 X
+	private class CustomTableModel extends DefaultTableModel { // 테이블 데이터를 클릭해서 수정하는것을 불가능하게 한다.
 
 		public CustomTableModel(Object[][] data, Object[] columnNames) {
 			super(data, columnNames);

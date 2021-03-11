@@ -5,6 +5,8 @@ import javax.swing.SwingConstants;
 import swingStudy_panel.Employee;
 
 public class EmpTablePanel extends AbstractCustomTablePanel<Employee> {
+	public EmpTablePanel() {
+	}
 
 	@Override
 	protected void setAlignAndWidth() {

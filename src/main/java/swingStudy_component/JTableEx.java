@@ -1,28 +1,32 @@
 package swingStudy_component;
 
 import java.awt.BorderLayout;
+import java.awt.Color;
 import java.awt.GridLayout;
 import java.util.ArrayList;
 import java.util.List;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+import javax.swing.JScrollPane;
 import javax.swing.JTable;
+import javax.swing.UIManager;
 import javax.swing.border.EmptyBorder;
 import javax.swing.border.TitledBorder;
 import javax.swing.table.DefaultTableModel;
 
+import swingStudy_component.table.DeptTablePanel;
+import swingStudy_component.table.EmpTablePanel;
+import swingStudy_component.table.MyTablePanel;
+import swingStudy_component.table.SaleTablePanel;
 import swingStudy_component.table.Student;
+import swingStudy_component.table.TitleTablePanel;
+import swingStudy_honja.dto.customer;
+import swingStudy_honja.dto.product;
+import swingStudy_honja.dto.sale;
 import swingStudy_panel.Department;
 import swingStudy_panel.Employee;
 import swingStudy_panel.Title;
-import swingStudy_component.table.MyTablePanel;
-import javax.swing.JScrollPane;
-import javax.swing.UIManager;
-import java.awt.Color;
-import swingStudy_component.table.DeptTablePanel;
-import swingStudy_component.table.TitleTablePanel;
-import swingStudy_component.table.EmpTablePanel;
 
 public class JTableEx extends JFrame {
 
@@ -33,7 +37,7 @@ public class JTableEx extends JFrame {
 	private List<Department> deptList = new ArrayList<>();
 	private List<Title> titleList = new ArrayList<>();
 	private List<Employee> empList = new ArrayList<>();
-	
+	private List<sale> saleList = new ArrayList<>();
 	
 	public JTableEx() {
 		stdList.add(new Student(1, "김인환", 50, 60, 60));
@@ -53,6 +57,8 @@ public class JTableEx extends JFrame {
 		empList.add(new Employee(1, "김상건", titleList.get(0), null , 4500000, deptList.get(0)));
 		empList.add(new Employee(2, "이성래", titleList.get(1), new Employee(1, "김상건") , 1500000, deptList.get(1)));
 		empList.add(new Employee(3, "이태훈", titleList.get(2), new Employee(1, "김상건") , 2000000, deptList.get(2)));
+		
+		saleList.add(new sale(1, "20210310", new customer(4512), new product("PA"), 4, 17600, 1600));
 		initialize();
 	}
 
@@ -112,6 +118,10 @@ public class JTableEx extends JFrame {
 		JPanel pTable6 = new JPanel();
 		contentPane.add(pTable6);
 		pTable6.setLayout(new BorderLayout(0, 0));
+		
+		SaleTablePanel pDetail = new SaleTablePanel();
+		pDetail.setList(saleList);
+		pTable6.add(pDetail, BorderLayout.CENTER);
 	}
 
 	public DefaultTableModel getModel() {
